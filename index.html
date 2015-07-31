@@ -69,6 +69,9 @@
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script language="javascript">
+			var tags = [ "Curse like the bard himself!",
+			             "Now 300% more insulting*",
+			             "Thy mother wast a hamster and thy father smelt of elderberries" ];
 			var first = [ "artless", "bawdy", "beslubbering", "bootless", "churlish", "cockered", "clouted", "craven", "currish", "dankish", "dissembling", 
 			              "droning", "errant", "fawning", "fobbing", "froward", "frothy", "gleeking", "goatish", "gorbellied", "impertinent", "insalubrious",
 			              "infectious", "jarring", "loggerheaded", "lumpish", "mammering", "mangled", "mewling", "paunchy", "pribbling", "puking", "puny", 
@@ -87,6 +90,12 @@
 			              "malt-worm", "mammet", "measle", "minnow", "miscreant", "moldwarp", "mumble-news", "nut-hook", "pigeon-egg", "pignut", "puttock",
 			              "pumpion", "ratsbane", "scut", "skainsmate", "strumpet", "varlot", "vassal", "whey-face", "wagtail" ];
 			
+			function generateTag()
+			{
+				var tag = tags[ Math.floor(Math.random() * tags.length) ];
+				$('#tag').html( tag );
+			}
+			
 			function generateInsult()
 			{
 				var insult = "&ldquo;Thou ";
@@ -97,7 +106,8 @@
 				$('#insult').html( insult );
 			}
 			
-			$( document ).ready(function() {
+			$( document ).ready( function() {
+				generateTag();
 				generateInsult();
 				
 				$('#regenerate').click( function() {
@@ -109,7 +119,7 @@
 	<body>
 		<div id="wrapper">
 			<div class="header">Shakespearean Insult Generator</div>
-			<div class="small">Curse like the bard himself!</div>
+			<div id="tag" class="small">Curse like the bard himself!</div>
 			<div id="insult"></div>
 			<div class="btn" id="regenerate">Generateth Aenothor?</div>
 			<div class="small footer">
