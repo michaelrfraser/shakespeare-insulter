@@ -71,12 +71,12 @@
 			
 			function generateInsult()
 			{
-				var insult = "'Thou ";
+				var insult = "&ldquo;Thou ";
 				insult += first[ Math.floor(Math.random() * first.length) ] + ", ";
 				insult += second[ Math.floor(Math.random() * second.length) ] + " ";
-				insult += third[ Math.floor(Math.random() * third.length) ] + "'";
+				insult += third[ Math.floor(Math.random() * third.length) ] + "!&rdquo;";
 				
-				$('#insult').text( insult );
+				$('#insult').html( insult );
 			}
 			
 			$( document ).ready(function() {
