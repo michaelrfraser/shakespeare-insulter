@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Shakespearean Insult Generator</title>
+		<link href='http://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<style>
+			body
+			{
+				background-color: linen;
+			}
+			
+			.header
+			{
+				font-family: 'Open Sans', sans-serif;
+				font-size: 200%;
+			}
+			
+			.btn 
+			{
+				-webkit-border-radius: 10;
+				-moz-border-radius: 10;
+				border-radius: 10px;
+				font-family: 'Open Sans', sans-serif;
+				color: #ffffff;
+				background: #000000;
+				padding: 10px 20px 10px 20px;
+				display: inline-block;
+				cursor: pointer;
+			}
+
+			.btn:hover 
+			{
+				background: #454545;
+			}
+			
+			.small
+			{
+				font-family: 'Open Sans', sans-serif;
+				font-size: 75%;
+			}
+			
+			.footer
+			{
+				margin: 20px;
+			}
+			
+			#wrapper 
+			{
+				position: fixed; 
+				width: 90%;
+				z-index: 2;
+				top: 20%;
+				left: 50%;
+				margin-top: -10%;  /* height */
+				margin-left: -45%; /* width divided by 2 */
+				text-align: center;
+			}
+			
+			#insult
+			{
+				font-family: 'Ruthie', cursive;
+				font-size: 7vw;
+				padding: 40px 20px 40px 20px;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script language="javascript">
+			var first = [ "mewling", "paunchy", "pribbling", "puking", "puny", "qualling", "rank", "reeky", "roguish", "ruttish", "saucy", "spleeny", "spongy", "surly" ];
+			var second = [ "idle-headed", "ill-breeding", "ill-nutured", "knotty-pated", "milk-livered", "motley-minded", "onion-eyed", "plume-plucked", "pottle-deep", "pox-marked", "reeling-ripe", "rough-hewn", "rude-growing", "rump-fed" ];
+			var third = [ "lewdster", "lout", "maggot-pie", "malt-worm", "mammet", "measle", "minnow", "miscreant", "moldwarp", "mumble-news", "nut-hook", "pigeon-egg", "pignut", "puttock" ];
+			
+			function generateInsult()
+			{
+				var insult = "'Thou ";
+				insult += first[ Math.floor(Math.random() * first.length) ] + ", ";
+				insult += second[ Math.floor(Math.random() * second.length) ] + " ";
+				insult += third[ Math.floor(Math.random() * third.length) ] + "'";
+				
+				$('#insult').text( insult );
+			}
+			
+			$( document ).ready(function() {
+				generateInsult();
+				
+				$('#regenerate').click( function() {
+					generateInsult();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="header">Shakespearean Insult Generator</div>
+			<div class="small">Curse like the bard himself!</div>
+			<div id="insult"></div>
+			<div class="btn" id="regenerate">Generateth Aenothor?</div>
+			<div class="small footer">
+				Created by <a href="https://github.com/michaelrfraser">michaelrfraser</a> while waiting for a 20Gb 7-zip to compress
+				<br/>
+				View this project on <a href="https://github.com/michaelrfraser/shakespeare-insulter">GitHub</a>
+			</div>
+		</div>
+	</body>
+</html>
