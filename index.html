@@ -63,7 +63,7 @@
 			#insult
 			{
 				font-family: 'Ruthie', cursive;
-				font-size: 7vw;
+				font-size: 6.5vw;
 				padding: 40px 20px 40px 20px;
 			}
 		</style>
@@ -71,24 +71,66 @@
 		<script language="javascript">
 			var tags = [ "Curse like the bard himself!",
 			             "Now 300% more insulting*",
-			             "Thy mother wast a hamster and thy father smelt of elderberries" ];
-			var first = [ "artless", "bawdy", "beslubbering", "bootless", "churlish", "cockered", "clouted", "craven", "currish", "dankish", "dissembling", 
-			              "droning", "errant", "fawning", "fobbing", "froward", "frothy", "gleeking", "goatish", "gorbellied", "impertinent", "insalubrious",
-			              "infectious", "jarring", "loggerheaded", "lumpish", "mammering", "mangled", "mewling", "paunchy", "pribbling", "puking", "puny", 
-			              "qualling", "rank", "reeky", "roguish", "ruttish", "saucy", "spleeny", "spongy", "surly", "tottering", "unmuzzled", "vain", "venomed", 
-			              "villainous", "warped", "wayward", "weedy", "yeasty"];
-			var second = [ "base-court", "bat-fowling", "beef-witted", "beetle-headed", "boil-brained", "clapper-clawed", "clay-brained", "common-kissing",
-			               "crook-pated", "dismal-dreaming", "dizzy-eyed", "doghearted", "dread-bolted", "earth-vexing", "elf-skinned", "fat-kidneyed",
-			               "fen-sucked", "flap-mouthed", "fly-bitten", "folly-fallen", "fool-born", "full-gorged", "guts-griping", "half-faced", 
-			               "hasty-witted", "hedge-born", "hell-hated", "idle-headed", "ill-breeding", "ill-nutured", "knotty-pated", "milk-livered", 
-			               "motley-minded", "onion-eyed", "plume-plucked", "pottle-deep", "pox-marked", "reeling-ripe", "rough-hewn", "rude-growing", 
-			               "rump-fed", "shard-borne", "sheep-biting", "spur-galled", "swag-bellied", "tardy-gaited", "tickle-brained", "toad-spotted",
+			             "Thy mother wast a hamster and thy father smelt of elderberries",
+			             "What strange fish hath made his meal on thee?",
+						 "Sweep on, you fat and greasy citizens",
+						 "I desire that we be better strangers",
+						 "You lisp and wear strange suits",
+						 "It out herods Herrod",
+						 "Peace, ye fat guts",
+						 "Putting sharp weapons in the hands of madmen since 2015",
+						 "What rubbish, what offal",
+						 "Away with those giglets",
+						 "How now, Mephostophilus",
+						 "Art thou lunatics?",
+						 "What hempen homespun have we swaggering here?",
+						 "An index and obscure prologue to the history of lust and foul thoughts",
+						 "If you spend word for word with me, I shall make your wit bankrupt" ];
+			var first = [ "artless", "bawdy", "beslubbering", "bootless", "brazen", "churlish", 
+			              "cockered", "contemptuous", "clouted", "craven", "crusty", "currish", 
+			              "dankish", "deformed", "degenerate", "despised", "disloyal", "dissembling", 
+			              "dissentious", "droning", "errant", "fawning", "fobbing", "froward", 
+			              "frothy", "gleeking", "goatish", "gorbellied", "greasy", "impertinent", 
+			              "insalubrious", "infectious", "irksome", "jarring", "loathsome", 
+			              "loggerheaded", "lumpish", "malignant", "mammering", "mangled", "meek", 
+			              "mewling", "misshapen", "odoriferous", "paunchy", "pernicious", 
+			              "pestilent", "pribbling", "puking", "puny", "qualling", "rank", "reeky", 
+			              "roasted", "roguish", "ruinious", "ruttish", "saucy", "shapeless", 
+			              "spleeny", "spongy", "starvelling", "stewed", "stuffed", "sullun", 
+			              "surly", "swollen", "tottering", "usurping", "unmannered", "unmuzzled", 
+			              "vain", "venomed", "vile", "villainous", "warped", "waspish", "wayward", 
+			              "weedy", "yeasty"];
+			var second = [ "affable", "base-court", "bat-fowling", "beef-witted", "beetle-headed", 
+			               "boil-brained", "clapper-clawed", "clay-brained", "common-kissing",
+			               "crooked", "crook-pated", "cullionly", "dilatory", "dismal-dreaming", 
+			               "detestable", "dizzy-eyed", "doghearted", "dread-bolted", 
+			               "earth-vexing", "elf-skinned", "fat-kidneyed", "fen-sucked", 
+			               "flap-mouthed", "fly-bitten", "folly-fallen", "fool-born", 
+			               "full-gorged", "guts-griping", "half-faced", "hasty-witted", 
+			               "hedge-born", "heedless", "hell-hated", "idle-headed", "ill-breeding", 
+			               "ill-nutured", "insolent ", "knotty-pated", "lascivious", 
+			               "lily-liver'd", "lubbery", "milk-livered", "motley-minded", 
+			               "onion-eyed", "peevish", "plume-plucked", "pottle-deep", "pox-marked", 
+			               "reeling-ripe", "rough-hewn", "rude-growing", "rump-fed", 
+			               "shard-borne", "sheep-biting", "souless", "spur-galled", 
+			               "swag-bellied", "tardy-gaited", "tickle-brained", "toad-spotted",
 			               "unchin-snouted", "weather-bitten" ];
-			var third = [ "apple-john", "baggage", "barnacle", "bladder", "boar-pig", "bugbear", "bum-bailey", "canker-blossom", "clack-dish", "clotpole",
-			              "coxcomb", "codpiece", "death-token", "dewberry", "flap-dragon", "flax-wench", "flirt-gill", "foot-licker", "fustilarian", "giglet",
-			              "gudgeon", "haggard", "harpy", "hedge-pig", "horn-beast", "hugger-mugger", "joithead", "lewdster", "lout", "maggot-pie", 
-			              "malt-worm", "mammet", "measle", "minnow", "miscreant", "moldwarp", "mumble-news", "nut-hook", "pigeon-egg", "pignut", "puttock",
-			              "pumpion", "ratsbane", "scut", "skainsmate", "strumpet", "varlot", "vassal", "whey-face", "wagtail" ];
+			var third = [ "apple-john", "baggage", "barbermonger", "barnacle", "braggart", 
+			              "beggar", "bladder", "boar-pig", "bugbear", "bull’s-pizzle", 
+			              "bum-bailey", "canker-blossom", "carbuncle", "carrion", "clack-dish", 
+			              "clotpole", "codpiece", "courtesan", "coward", "coxcomb", "cur", 
+			              "death-token", "deformity", "dewberry", "dunghill", "eel-skin", 
+			              "flap-dragon", "flax-wench", "flirt-gill", "fiend", "foot-licker", 
+			              "fornicator", "fustilarian", "giglet", "gudgeon", "haggard", "hag-seed", 
+			              "harlot", "harpy", "hedge-pig", "hobby-horse", "hog", "horn-beast", 
+			              "hugger-mugger", "jackanapes", "jolthead", "knave", "lackey", "lewdster", 
+			              "loggerhead", "loon", "lout", "maggot-pie", "malt-worm", "mammet", 
+			              "measle", "milksop", "minnow", "miscreant", "moldwarp", "mumble-news", 
+			              "nut-hook", "offal", "parasite", "periwig", "pigeon-egg", "pignut", 
+			              "polecat", "prune", "puttock", "pumpion", "ratcatcher", "ratsbane", 
+			              "recreant", "ronyon", "ruffian", "scullion", "scut", "skainsmate", 
+			              "strumpet", "swine", "rampallian", "tallow-catch", "toad", "varlot", 
+			              "vassal", "wagtail", "wench", "whey-face", "whoremaster", "whoreson" ];
 			
 			function generateTag()
 			{
